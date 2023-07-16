@@ -5,7 +5,6 @@ function App() {
   return (
     <div className='App'>
       <AuthPage />
-      <h1>Hello world</h1>
     </div>
   );
 }

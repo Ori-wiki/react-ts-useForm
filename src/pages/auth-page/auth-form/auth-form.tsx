@@ -21,7 +21,9 @@ interface ISignInForm {
 }
 
 export const AuthForm = () => {
-  const { handleSubmit, control } = useForm<ISignInForm>();
+  const { handleSubmit, control } = useForm<ISignInForm>({
+    mode: 'onChange',
+  });
   const { errors } = useFormState({
     control,
   });
@@ -54,7 +56,7 @@ export const AuthForm = () => {
               className='auth-form__input'
               fullWidth={true}
               onChange={(e) => field.onChange(e)}
-              value={field.value}
+              value={field.value || ''}
               error={!!errors.login?.message}
               helperText={errors.login?.message}
             />
@@ -74,7 +76,7 @@ export const AuthForm = () => {
               className='auth-form__input'
               fullWidth={true}
               onChange={(e) => field.onChange(e)}
-              value={field.value}
+              value={field.value || ''}
               error={!!errors.password?.message}
               helperText={errors.password?.message}
             />
