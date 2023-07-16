@@ -94,7 +94,7 @@ export const AuthForm = () => {
             marginTop: 2,
           }}
         >
-          Text
+          Войти
         </Button>
       </form>
     </div>
