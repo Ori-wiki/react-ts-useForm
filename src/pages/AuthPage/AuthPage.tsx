@@ -7,9 +7,10 @@ import './AuthPage.css';
 const AuthPage: React.FC = () => {
   return (
     <div className='auth-page'>
-      {/* <Routes> */}
-      <AuthForm />
-      {/* </Routes> */}
+      <Routes>
+        <Route path='/login' element={<AuthForm />} />
+        <Route path='/register' element={<AuthForm />} />
+      </Routes>
     </div>
   );
 };
