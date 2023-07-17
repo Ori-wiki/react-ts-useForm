@@ -11,7 +11,7 @@ import {
   useFormState,
 } from 'react-hook-form';
 
-import './auth-form.css';
+import './AuthForm.css';
 import { loginValidation, passwordValidation } from './validation';
 
 interface ISignInForm {
