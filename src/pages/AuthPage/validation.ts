@@ -20,3 +20,15 @@ export const passwordValidation = {
     return true;
   },
 };
+export const nameValidation = {
+  required: REQUIRED_FIELD,
+  validate: (value: string) => {
+    if (value.length < 2) {
+      return 'Имя слишком короткое';
+    }
+    if (value.length > 32) {
+      return 'Имя слишком длинное';
+    }
+    return true;
+  },
+};

@@ -8,8 +8,8 @@ function App() {
     <div className='App'>
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/login' element={<AuthPage />} />
-        <Route path='/register' element={<AuthPage />} />
+        <Route path='/login' element={<AuthPage login={true} />} />
+        <Route path='/register' element={<AuthPage login={false} />} />
       </Routes>
     </div>
   );
