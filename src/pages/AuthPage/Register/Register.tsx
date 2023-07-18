@@ -11,16 +11,20 @@ import {
   useFormState,
 } from 'react-hook-form';
 
-import './AuthForm.css';
-import { loginValidation, passwordValidation } from './validation';
+import './Register.css';
+import {
+  loginValidation,
+  nameValidation,
+  passwordValidation,
+} from '../validation';
 
 interface ISignInForm {
   login: string;
   password: string;
-  TextField: string;
+  name: string;
 }
 
-export const AuthForm = () => {
+const Register = () => {
   const { handleSubmit, control } = useForm<ISignInForm>({
     mode: 'onChange',
   });
@@ -35,7 +39,7 @@ export const AuthForm = () => {
   return (
     <div className='auth-form'>
       <Typography component='div' variant='h4'>
-        Войдите
+        Зарегистрируйтесь
       </Typography>
       <Typography
         component='div'
@@ -46,6 +50,25 @@ export const AuthForm = () => {
         Чтобы получить доступ
       </Typography>
       <form className='auth-form__form' onSubmit={handleSubmit(onSubmit)}>
+        <Controller
+          render={({ field }) => (
+            <TextField
+              {...field}
+              label='Имя'
+              size='small'
+              margin='normal'
+              className='auth-form__input'
+              fullWidth={true}
+              onChange={(e) => field.onChange(e)}
+              value={field.value || ''}
+              error={!!errors.name?.message}
+              helperText={errors.name?.message}
+            />
+          )}
+          control={control}
+          name='name'
+          rules={nameValidation}
+        />
         <Controller
           render={({ field }) => (
             <TextField
@@ -100,3 +123,5 @@ export const AuthForm = () => {
     </div>
   );
 };
+
+export default Register;

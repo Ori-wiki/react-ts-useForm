@@ -1,18 +1,12 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { AuthForm } from './AuthForm/AuthForm';
+import Login from './Login/Login';
 
 import './AuthPage.css';
+import Register from './Register/Register';
 
-const AuthPage: React.FC = () => {
-  return (
-    <div className='auth-page'>
-      <Routes>
-        <Route path='/login' element={<AuthForm />} />
-        <Route path='/register' element={<AuthForm />} />
-      </Routes>
-    </div>
-  );
+const AuthPage: React.FC<{ login: boolean }> = ({ login }) => {
+  return <div className='auth-page'>{login ? <Login /> : <Register />}</div>;
 };
 
 export default AuthPage;
