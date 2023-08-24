@@ -1,16 +1,11 @@
 import React from 'react';
-import AuthPage from './pages/AuthPage/AuthPage';
-import { Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage/HomePage';
 
-function App() {
+import AuthPage from './pages/AuthPage';
+
+function App(): JSX.Element {
   return (
     <div className='App'>
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/login' element={<AuthPage login={true} />} />
-        <Route path='/register' element={<AuthPage login={false} />} />
-      </Routes>
+      <AuthPage />
     </div>
   );
 }
