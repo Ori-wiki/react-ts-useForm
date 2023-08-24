@@ -1,27 +1,58 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# React, Typescript, Tailwindcss, Redux Toolkit, eslint with Vite
 
-Currently, two official plugins are available:
+This is a [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang.org/) + [Tailwind](https://tailwindcss.com/) + [RTK](https://redux-toolkit.js.org/) + [eslint](https://eslint.org/) boilerplate built with [Vite](https://vitejs.dev).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## What's inside?
 
-## Expanding the ESLint configuration
+-   [ReactJS](https://reactjs.org)
+-   [Vite](https://vitejs.dev)
+-   [TypeScript](https://www.typescriptlang.org)
+-   [Tailwind](https://tailwindcss.com/)
+-   [RTK](https://redux-toolkit.js.org/)
+-   [ESLint](https://eslint.org)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Getting started
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone the repository.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+    ```bash
+    git clone https://github.com/IsaiaPhiliph/vite-reactts-tailwind-rtk-eslint.git
+    ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Access the project.
+
+    ```bash
+    cd vite-reactts-tailwind-rtk-eslint
+    ```
+
+3. Make it your own repository
+
+    ```bash
+    rm -rf .git
+    git init
+    ```
+
+4. Install dependencies.
+
+    ```bash
+    npm i
+    ```
+
+5. Start the development server.
+
+    ```bash
+    npm run dev
+    ```
+
+6. Build for production.
+
+    ```bash
+    npm run build
+    ```
+
+7. Test your production build.
+
+    ```bash
+    npm run serve
+    ```
