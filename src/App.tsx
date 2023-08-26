@@ -1,13 +1,5 @@
-import React from 'react';
-
-import AuthPage from './pages/AuthPage';
-
-function App(): JSX.Element {
-  return (
-    <div className='App'>
-      <AuthPage />
-    </div>
-  );
+function App() {
+  return <div className="w-full flex flex-col items-center justify-center"></div>;
 }
 
 export default App;

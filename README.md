@@ -1,58 +1,50 @@
+# hackaton-chatty_AI_PM_Assistant
+[Github Pages](https://voice-assistant-demo.netlify.app/)
+### Стек технологий
+![](https://img.shields.io/badge/React-18.2.0-black?style=flat&logo=react)
+![](https://img.shields.io/badge/TypeScript-5.0.2-black?style=flat&logo=typescript)
+![](https://img.shields.io/badge/Redux-4.2.1-black?style=flat&logo=redux)
+![](https://img.shields.io/badge/Axios-1.4.0-black?style=flat&logo=Axios)
+![](https://img.shields.io/badge/Tailwind-3.3.3-black?style=flat&logo=Tailwindcss)
+#### API
+![](https://img.shields.io/badge/Web_Speech-API-black)
+ ![](https://img.shields.io/badge/OpenAI-API-black?style=flat&logo=openai)
+![](https://img.shields.io/badge/Trello-API-black?style=flat&logo=trello)
+### Links
 
-# React, Typescript, Tailwindcss, Redux Toolkit, eslint with Vite
+* [link on github](https://github.com/Dimitry-prog/voice-assistant)
+* [link to demo](https://voice-assistant-demo.netlify.app/)
+* [link to trello board for test](https://trello.com/b/YUdvtYEq/your-board)
 
-This is a [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang.org/) + [Tailwind](https://tailwindcss.com/) + [RTK](https://redux-toolkit.js.org/) + [eslint](https://eslint.org/) boilerplate built with [Vite](https://vitejs.dev).
+### TEAM
 
-## What's inside?
+* PM
+    * [Максим Евдокимов](https://t.me/maxorli)
+* Design
+    * [Илья Воробьев](https://t.me/ivrobey)
+    * [Владимир Панковец](https://t.me/vladimirpankovec)
+* Frontend
+    * [Денис Казаков](https://github.com/Ori-wiki)
+    * [Дмитрий Мытников](https://github.com/Dimitry-prog)
 
--   [ReactJS](https://reactjs.org)
--   [Vite](https://vitejs.dev)
--   [TypeScript](https://www.typescriptlang.org)
--   [Tailwind](https://tailwindcss.com/)
--   [RTK](https://redux-toolkit.js.org/)
--   [ESLint](https://eslint.org)
+#### Запуск проекта
 
-## Getting started
+> * установка зависимостей: npm install
+> * старт проекта: npm run dev
 
-1. Clone the repository.
+### Пример обязательных ключей
 
-    ```bash
-    git clone https://github.com/IsaiaPhiliph/vite-reactts-tailwind-rtk-eslint.git
-    ```
+* VITE_OPENAI_API_KEY=yourkey
+* VITE_OPENAI_BASE_URL=https://api.openai.com/v1
+*
+VITE_TRELLO_API_TOKEN=key=ac6d52cd851e6e0fd687ce36dda30d45&token=ATTA7194362b6f7b0932ece543b8574095151c8cb16379ac42860d2ae2c3e76f597c81048FFF
 
-2. Access the project.
+- trello должен в себя включать, и key, и token. Например: key=ac6d5&token=ATTA71943
 
-    ```bash
-    cd vite-reactts-tailwind-rtk-eslint
-    ```
 
-3. Make it your own repository
 
-    ```bash
-    rm -rf .git
-    git init
-    ```
+#### API
 
-4. Install dependencies.
-
-    ```bash
-    npm i
-    ```
-
-5. Start the development server.
-
-    ```bash
-    npm run dev
-    ```
-
-6. Build for production.
-
-    ```bash
-    npm run build
-    ```
-
-7. Test your production build.
-
-    ```bash
-    npm run serve
-    ```
+* Web Speech API
+* Open AI
+* Trello API
