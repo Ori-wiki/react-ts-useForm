@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { loginValidation, passwordValidation } from './validation';
+import { Link } from 'react-router-dom';
 
 type FormValues = {
   Login: string;
@@ -72,6 +73,7 @@ const AuthForm = () => {
           Войти
         </Button>
       </form>
+      <Link to="/auth/register">Register</Link>
     </div>
   );
 };
