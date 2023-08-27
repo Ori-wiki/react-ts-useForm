@@ -1,5 +1,7 @@
+import AuthPage from './pages/AuthPage/AuthPage';
+
 function App() {
-  return <div className="w-full flex flex-col items-center justify-center"></div>;
+  return <AuthPage />;
 }
 
 export default App;
