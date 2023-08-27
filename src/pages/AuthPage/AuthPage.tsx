@@ -1,5 +1,6 @@
 import React from 'react';
-import AuthForm from './AuthForm';
+import { Outlet } from 'react-router-dom';
+
 import forestUrl from '../../images/marek-piwnicki-htqzuJF0tps-unsplash.jpg';
 
 const AuthPage = () => {
@@ -10,7 +11,7 @@ const AuthPage = () => {
         backgroundImage: `url(${forestUrl})`,
       }}
     >
-      <AuthForm />
+      <Outlet />
     </div>
   );
 };
