@@ -3,23 +3,41 @@ import { useForm, SubmitHandler, Controller, useFormState } from 'react-hook-for
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { loginValidation, passwordValidation } from './validation';
-import { Link } from 'react-router-dom';
+import { emailValidation, passwordValidation } from './validation';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../store/slices/userSlice';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 type FormValues = {
-  Login: string;
+  Email: string;
   Password: string;
 };
 
 const AuthForm = () => {
-  // const { handleSubmit, control } = useForm<Inputs>();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const { handleSubmit, control } = useForm<FormValues>({ mode: 'onChange' });
   const { errors } = useFormState({
     control,
   });
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data);
-  console.log('erros', errors);
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, data.Email, data.Password)
+      .then(({ user }) => {
+        dispatch(
+          setUser({
+            email: user.email,
+            id: user.uid,
+            token: user.accessToken,
+          })
+        );
+        navigate('/');
+      })
+      .catch((e) => console.log(e));
+  };
 
   return (
     <div className="w-1/2 h-screen bg-white p-5 flex flex-col justify-center items-center">
@@ -32,20 +50,21 @@ const AuthForm = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="max-w-sm">
         <Controller
           control={control}
-          name="Login"
-          rules={loginValidation}
+          name="Email"
+          rules={emailValidation}
           render={({ field }) => (
             <>
               <TextField
-                label="Логин"
+                label="Email"
+                type="email"
                 size="small"
                 margin="normal"
                 className=""
                 fullWidth={true}
                 onChange={(e) => field.onChange(e)}
                 value={field.value || ''}
-                error={!!errors.Login?.message}
-                helperText={errors.Login?.message ? errors.Login?.message : ' '}
+                error={!!errors.Email?.message}
+                helperText={errors.Email?.message ? errors.Email?.message : ' '}
               />
             </>
           )}
@@ -59,7 +78,6 @@ const AuthForm = () => {
               label="Пароль"
               type="password"
               size="small"
-              margin="normal"
               className=""
               fullWidth={true}
               onChange={(e) => field.onChange(e)}
