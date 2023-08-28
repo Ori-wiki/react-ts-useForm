@@ -6,6 +6,9 @@ export const loginValidation = {
     if (value.match(/[а-яА-Я]/)) {
       return 'Логин не может содержать русские буквы';
     }
+    if (value.length < 2) {
+      return 'Логин должен быть длинее 2 символов';
+    }
 
     return true;
   },
