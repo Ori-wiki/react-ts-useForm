@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import { emailValidation, nameValidation, passwordValidation } from './validation';
 import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../../hooks/redux-hooks';
 import { setUser } from '../../store/slices/userSlice';
 
 type FormValues = {
@@ -16,7 +16,7 @@ type FormValues = {
 };
 
 const RegisterForm = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const { handleSubmit, control } = useForm<FormValues>({ mode: 'onChange' });
@@ -33,7 +33,7 @@ const RegisterForm = () => {
           setUser({
             email: user.email,
             id: user.uid,
-            token: user.accessToken,
+            token: user.refreshToken,
           })
         );
         navigate('/');

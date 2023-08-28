@@ -5,7 +5,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { emailValidation, passwordValidation } from './validation';
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../../hooks/redux-hooks';
 import { setUser } from '../../store/slices/userSlice';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
@@ -15,7 +15,7 @@ type FormValues = {
 };
 
 const AuthForm = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const { handleSubmit, control } = useForm<FormValues>({ mode: 'onChange' });
@@ -31,7 +31,7 @@ const AuthForm = () => {
           setUser({
             email: user.email,
             id: user.uid,
-            token: user.accessToken,
+            token: user.refreshToken,
           })
         );
         navigate('/');
